@@ -1,3 +1,5 @@
 # Compléter ici !!!!???
 
 node_modules
+.env
+.vscode/
