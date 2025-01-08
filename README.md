@@ -63,8 +63,8 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 │   ├── app.js                   # Point d'entrée de l'application
 ├── .env                         # Fichier de configuration des variables d'environnement
 ├── .gitignore                   # Fichier pour ignorer les fichiers et dossiers spécifiques
-├── [package.json](http://_vscodecontentref_/1)                 # Dépendances et scripts du projet
-└── [README.md](http://_vscodecontentref_/2)                    # Documentation du projet
+├── [package.json]               # Dépendances et scripts du projet
+└── [README.md]                  # Documentation du projet
 ```
 
 ### Choix Techniques
@@ -89,3 +89,16 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 - **Quelles sont les bonnes pratiques pour les clés Redis ?** Les bonnes pratiques pour les clés Redis incluent l'utilisation de noms de clés descriptifs et hiérarchiques, l'utilisation de préfixes pour regrouper les clés par fonctionnalité ou module, et l'évitement des clés trop longues ou trop courtes.
 - **Quelles sont les informations sensibles à ne jamais commiter ?** Les informations sensibles à ne jamais commiter incluent les mots de passe, les clés API, les jetons d'authentification, les informations de connexion à la base de données, et toute autre information confidentielle qui pourrait compromettre la sécurité de l'application.
 - **Pourquoi utiliser des variables d'environnement ?** Utiliser des variables d'environnement permet de séparer la configuration du code, de rendre l'application plus flexible et plus sécurisée.
+
+### Screenshots
+
+1. Create Course:
+
+   ![Create Course](./screenshots/createCourse.png)
+
+2. Get Course by ID:
+
+   ![Get Course by ID](./screenshots/getCourseById.png)
+
+3. Get Course Stats:
+   ![Get Course Stats](./screenshots/getCoursesStats.png)
