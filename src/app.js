@@ -4,8 +4,8 @@
 // Réponse : La meilleure façon de gérer le démarrage de l'application est d'utiliser une fonction asynchrone pour gérer les connexions aux bases de données et les erreurs, et de s'assurer que toutes les ressources sont correctement fermées lors de l'arrêt de l'application.
 
 const express = require("express");
-const config = require("./env");
-const { connectMongo, connectRedis } = require("./db");
+const config = require("./config/env");
+const db = require("./config/db");
 
 const courseRoutes = require("./routes/courseRoutes");
 
@@ -13,15 +13,12 @@ const app = express();
 
 async function startServer() {
   try {
-    // Initialiser les connexions aux bases de données
-    await connectMongo();
-    await connectRedis();
+    await db.connectMongo();
+    await db.connectRedis();
 
-    // Configurer les middlewares Express
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 
-    // Monter les routes
     app.use("/courses", courseRoutes);
 
     // Démarrer le serveur
