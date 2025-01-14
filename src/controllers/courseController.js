@@ -22,7 +22,7 @@ async function createCourse(req, res) {
   }
 }
 
-async function getCourse(req, res) {
+async function getCourseById(req, res) {
   try {
     const courseId = req.params.id;
 
@@ -83,9 +83,63 @@ async function getCourseStats(req, res) {
   }
 }
 
+async function updateCourse(req, res) {
+  try {
+    const courseId = req.params.id;
+    if (!ObjectId.isValid(courseId)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+    const updateData = req.body;
+    const result = await db
+      .getDb()
+      .collection("courses")
+      .updateOne({ _id: new ObjectId(courseId) }, { $set: updateData });
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.status(200).json(result);
+  } catch (error) {
+    console.error("Error updating course:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
+async function deleteCourse(req, res) {
+  try {
+    const courseId = req.params.id;
+    if (!ObjectId.isValid(courseId)) {
+      return res.status(400).json({ error: "Invalid ID format" });
+    }
+    const result = await db
+      .getDb()
+      .collection("courses")
+      .deleteOne({ _id: new ObjectId(courseId) });
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: "Course not found" });
+    }
+    res.status(200).json({ message: "Course deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting course:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
+async function getAllCourses(req, res) {
+  try {
+    const courses = await db.getDb().collection("courses").find().toArray();
+    res.status(200).json(courses);
+  } catch (error) {
+    console.error("Error getting courses:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
 // Export des contrôleurs
 module.exports = {
   createCourse,
-  getCourse,
+  getCourseById,
   getCourseStats,
+  updateCourse,
+  deleteCourse,
+  getAllCourses,
 };

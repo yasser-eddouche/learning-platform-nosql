@@ -10,6 +10,9 @@ const courseController = require("../controllers/courseController");
 // Routes pour les cours
 router.post("/", courseController.createCourse);
 router.get("/stats", courseController.getCourseStats);
-router.get("/:id", courseController.getCourse);
+router.get("/:id", courseController.getCourseById);
+router.put("/:id", courseController.updateCourse);
+router.delete("/:id", courseController.deleteCourse);
+router.get("/", courseController.getAllCourses);
 
 module.exports = router;

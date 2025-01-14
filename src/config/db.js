@@ -11,13 +11,13 @@ let mongoClient, redisClient, db;
 
 async function connectMongo() {
   try {
-    mongoClient = new MongoClient(mongoUri, {
+    mongoClient = new MongoClient(config.mongodb.uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
     await mongoClient.connect();
     console.log("Connected to MongoDB");
-    db = mongoClient.db(dbName);
+    db = mongoClient.db(config.mongodb.dbName);
     return db;
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
@@ -27,7 +27,7 @@ async function connectMongo() {
 
 async function connectRedis() {
   try {
-    redisClient = redis.createClient({ url: redisUri });
+    redisClient = redis.createClient({ url: config.redis.uri });
     redisClient.on("error", (err) => console.error("Redis Client Error", err));
     await redisClient.connect();
     console.log("Connected to Redis");

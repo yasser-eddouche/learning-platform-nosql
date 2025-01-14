@@ -8,6 +8,7 @@ const config = require("./config/env");
 const db = require("./config/db");
 
 const courseRoutes = require("./routes/courseRoutes");
+const studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
 
@@ -20,7 +21,7 @@ async function startServer() {
     app.use(express.urlencoded({ extended: true }));
 
     app.use("/courses", courseRoutes);
-
+    app.use("/students", studentRoutes);
     // Démarrer le serveur
     const port = config.port;
     app.listen(port, () => {
