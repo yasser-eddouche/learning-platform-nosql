@@ -118,6 +118,7 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 
 1. Ajouter un étudiant :
    ![Ajouter un étudiant](./screenshots/addStudent.png)
+   
 2. Obtenir un étudiant par ID :
    ![Obtenir un étudiant par ID](./screenshots/getStudentById.png)
 
