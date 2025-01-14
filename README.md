@@ -92,13 +92,38 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 
 ### Screenshots
 
-1. Create Course:
+#### Cours
 
-   ![Create Course](./screenshots/createCourse.png)
+1. Créer un cours :
+   ![Créer un cours](./screenshots/createCourse.png)
 
-2. Get Course by ID:
+2. Obtenir un cours par ID :
+   ![Obtenir un cours par ID](./screenshots/getCourseById.png)
 
-   ![Get Course by ID](./screenshots/getCourseById.png)
+3. Obtenir les statistiques des cours :
+   ![Obtenir les statistiques des cours](./screenshots/getCoursesStats.png)
 
-3. Get Course Stats:
-   ![Get Course Stats](./screenshots/getCoursesStats.png)
+4. Obtenir tous les cours :
+   ![Obtenir tous les cours](./screenshots/getAllCourses.png)
+
+5. Mettre à jour un cours :
+   ![Mettre à jour un cours](./screenshots/updateCourse.png)
+
+6. Supprimer un cours :
+   ![Supprimer un cours](./screenshots/deleteCourse.png)
+
+### Étudiants
+
+1. Ajouter un étudiant :
+   ![Ajouter un étudiant](./screenshots/addStudent.png)
+2. Obtenir un étudiant par ID :
+   ![Obtenir un étudiant par ID](./screenshots/getStudentById.png)
+
+3. Obtenir tous les étudiants :
+   ![Obtenir tous les étudiants](./screenshots/getAllStudents.png)
+
+4. Mettre à jour un étudiant :
+   ![Mettre à jour un étudiant](./screenshots/updateStudent.png)
+
+5. Supprimer un étudiant :
+   ![Supprimer un étudiant](./screenshots/deleteStudent.png)
