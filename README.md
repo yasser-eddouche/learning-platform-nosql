@@ -55,16 +55,18 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 │   │   ├── env.js               # Validation des variables d'environnement
 │   ├── controllers
 │   │   ├── courseController.js  # Contrôleur pour les cours
+│   │   ├── studentController.js # Contrôleur pour les étudiants
 │   ├── routes
 │   │   ├── courseRoutes.js      # Routes pour les cours
+│   │   ├── studentRoutes.js     # Routes pour les étudiants
 │   ├── services
 │   │   ├── mongoService.js      # Services utilitaires pour MongoDB
 │   │   ├── redisService.js      # Services utilitaires pour Redis
 │   ├── app.js                   # Point d'entrée de l'application
 ├── .env                         # Fichier de configuration des variables d'environnement
 ├── .gitignore                   # Fichier pour ignorer les fichiers et dossiers spécifiques
-├── [package.json]               # Dépendances et scripts du projet
-└── [README.md]                  # Documentation du projet
+├── package.json                 # Dépendances et scripts du projet
+└── README.md                    # Documentation du projet
 ```
 
 ### Choix Techniques
@@ -90,9 +92,9 @@ Ce projet est une application de gestion de cours en ligne. Il utilise Node.js, 
 - **Quelles sont les informations sensibles à ne jamais commiter ?** Les informations sensibles à ne jamais commiter incluent les mots de passe, les clés API, les jetons d'authentification, les informations de connexion à la base de données, et toute autre information confidentielle qui pourrait compromettre la sécurité de l'application.
 - **Pourquoi utiliser des variables d'environnement ?** Utiliser des variables d'environnement permet de séparer la configuration du code, de rendre l'application plus flexible et plus sécurisée.
 
-### Screenshots
+## Screenshots
 
-#### Cours
+### Cours
 
 1. Créer un cours :
    ![Créer un cours](./screenshots/createCourse.png)
